@@ -1,4 +1,3 @@
-
 import RestaurentCard from "./RestaurentCard";
 import { restaurents } from "../utils/mockData";
 import { useEffect, useState } from "react";
@@ -6,11 +5,15 @@ import { useEffect, useState } from "react";
 function Body() {
 
     const [filteredRestaurents, setfilteredRestaurents] = useState(restaurents);
+    // console.log(filteredRestaurents)
 
     const [filters, setFilters] = useState({
         ratings: false,
         fastDelivery: false 
     });
+
+   
+      
 
     useEffect(()=>{
         setfilteredRestaurents(
@@ -34,6 +37,8 @@ function Body() {
         );
     },[filters]);
 
+
+    
     function handleFilterUpdate(filter){
 
         // const value = filter === "ratings" ? !filters.ratings : !filters.fastDelivery;
